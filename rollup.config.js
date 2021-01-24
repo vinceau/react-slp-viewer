@@ -4,6 +4,7 @@ import commonjs from "@rollup/plugin-commonjs";
 import typescript from "rollup-plugin-typescript2";
 import { terser } from "rollup-plugin-terser";
 import sass from "rollup-plugin-sass";
+import image from "@rollup/plugin-image";
 
 import pkg from "./package.json";
 
@@ -38,6 +39,7 @@ export default {
       exclude: ["node_modules/react-svg-unique-id/**/*.js"],
     }),
     typescript({ useTsconfigDeclarationDir: true }),
+    image(),
     sass({
       insert: true,
     }),
