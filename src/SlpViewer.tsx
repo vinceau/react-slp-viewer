@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Container } from "./components/Container";
 import { Display } from "./components/Display";
 import { Loading } from "./components/Loading";
 
@@ -10,9 +9,8 @@ export const SlpViewer: React.FC<{
   gameId: string;
   replay: any;
   size?: any;
-  shouldShowSlider?: boolean;
   shouldActivatePause?: boolean;
-}> = ({ gameId, replay, size, shouldShowSlider, shouldActivatePause }) => {
+}> = ({ gameId, replay, size, shouldActivatePause }) => {
   const [isFocus, setIsFocus] = useState(false);
   useEffect(() => {
     if (replay) {
@@ -32,7 +30,6 @@ export const SlpViewer: React.FC<{
   return (
     <div key={gameId} tabIndex={0} onMouseEnter={() => setIsFocus(!isFocus)} onMouseLeave={() => setIsFocus(!isFocus)}>
       <Display size={size} id={gameId} />
-      {shouldShowSlider && <Container id={gameId} />}
       <Loading id={gameId} />
     </div>
   );

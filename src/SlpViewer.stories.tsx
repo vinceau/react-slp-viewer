@@ -12,13 +12,5 @@ export default {
 };
 
 export const Default = (): JSX.Element => {
-  return (
-    <SlpViewer
-      gameId="hello-world"
-      replay={replay}
-      size={undefined}
-      shouldActivatePause={undefined}
-      shouldShowSlider={undefined}
-    />
-  );
+  return <SlpViewer gameId="hello-world" replay={replay} size={undefined} shouldActivatePause={undefined} />;
 };
