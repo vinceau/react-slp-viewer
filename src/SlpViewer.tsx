@@ -12,19 +12,24 @@ export const SlpViewer: React.FC<{
   shouldActivatePause?: boolean;
 }> = ({ gameId, replay, size, shouldActivatePause }) => {
   const [isFocus, setIsFocus] = useState(false);
+
+  const startGame = async () => {
+    slpGame.earlySetup(gameId);
+    await slpGame.start({ data: replay, shouldActivatePause }, gameId);
+  };
+
   useEffect(() => {
     if (replay) {
-      (async () => {
-        slpGame.earlySetup(gameId);
-        await slpGame.start({ data: replay, shouldActivatePause }, gameId);
-      })();
+      startGame();
     }
 
     return () => slpGame.stopGame(gameId);
   }, [replay]);
 
   useEffect(() => {
-    slpGame.managePause && shouldActivatePause && slpGame.managePause(gameId);
+    if (slpGame.managePause && shouldActivatePause) {
+      slpGame.managePause(gameId);
+    }
   }, [isFocus]);
 
   return (

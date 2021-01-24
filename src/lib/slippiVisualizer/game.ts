@@ -51,6 +51,9 @@ export default class Game {
       var p = this.replay.settings.players[i];
       if (!this.animations.has(p.characterId)) {
         const charAnimation = (await getAnimation(p.characterId)).default;
+        if (!charAnimation) {
+          throw new Error(`Unsupported character id: ${p.characterId}`);
+        }
         this.animations.set(p.characterId, charAnimation);
       }
       this.players[i] = new Player(
@@ -72,10 +75,10 @@ export default class Game {
     this.matchTimer = 480;
   }
 
-  public renderBGOnly() {
+  public renderMessage(message: string) {
     clearScreen(this.gameId);
     drawBackground(this.gameId);
-    drawErrorText(this.compatibilityText, this.gameId);
+    drawErrorText(message ?? this.compatibilityText, this.gameId);
   }
 
   public finishGame() {

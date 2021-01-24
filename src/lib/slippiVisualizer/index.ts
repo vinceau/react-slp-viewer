@@ -43,8 +43,14 @@ export async function start(event, id) {
       compatible.set(id, false);
     }
     const game = new Game(slp_replay, compatible.get(id), compatibilityText, id);
-    await game.init();
     curGame.set(id, game);
+    try {
+      await game.init();
+    } catch (err) {
+      console.error(err);
+      game.renderMessage(err.message ?? JSON.stringify(err));
+      return;
+    }
     //setupControlsBox();
     if (compatible.get(id)) {
       setupControls(game);
