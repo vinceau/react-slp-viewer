@@ -20,6 +20,7 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "rollup -c",
+    "watch": "rollup -cw",
     "test": "jest --verbose --passWithNoTests",
     "test:watch": "jest --watch",
     "start": "start-storybook -p 6060",
