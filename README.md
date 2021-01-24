@@ -1,9 +1,6 @@
-
 # `react-slp-viewer`
 
 > React component for viewing SLP files in browser
-
-For an interactive demo with examples, [check out the storybook](https://vinceau.github.com/react-slp-viewer).
 
 ## Development
 
@@ -41,7 +38,7 @@ You can then serve the files under `storybook-static` for demonstration.
 
 ## Acknowledgements
 
-This work is based off [Will "schmooblidon" Blackett](https://github.com/schmooblidon)'s [meleelight](https://github.com/schmooblidon/meleelight/) and [slippi-visualiser](https://github.com/schmooblidon/slippi-visualiser).
+This work is based off [Will Blackett](https://github.com/schmooblidon)'s [meleelight](https://github.com/schmooblidon/meleelight/) and [slippi-visualiser](https://github.com/schmooblidon/slippi-visualiser).
 
 ## License
 
