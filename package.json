@@ -1,0 +1,86 @@
+{
+  "name": "react-gamecube",
+  "description": "Gamecube controller input display",
+  "license": "MIT",
+  "version": "0.0.0",
+  "repository": "vinceau/react-gamecube",
+  "author": {
+    "name": "Vince Au",
+    "email": "vinceau09@gmail.com",
+    "url": "https://github.com/vinceau"
+  },
+  "engines": {
+    "node": ">=10"
+  },
+  "files": [
+    "dist"
+  ],
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "rollup -c",
+    "test": "jest --verbose --passWithNoTests",
+    "test:watch": "jest --watch",
+    "start": "start-storybook -p 6060",
+    "storybook": "build-storybook",
+    "lint": "eslint \"src/**/*.{ts,tsx}\"",
+    "lint:fix": "yarn run lint --fix",
+    "clean": "rimraf dist",
+    "prebuild": "yarn run clean",
+    "patch": "npm version patch && npm publish",
+    "minor": "npm version minor && npm publish",
+    "major": "npm version major && npm publish",
+    "prepublishOnly": "yarn run lint && yarn run test && yarn run build"
+  },
+  "keywords": [
+    "react",
+    "gamecube",
+    "controller",
+    "input",
+    "viewer"
+  ],
+  "peerDependencies": {
+    "@emotion/core": "^10.x",
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/helper-create-regexp-features-plugin": "^7.10.1",
+    "@emotion/core": "^10.0.28",
+    "@rollup/plugin-commonjs": "^11.1.0",
+    "@rollup/plugin-node-resolve": "^7.1.3",
+    "@storybook/addon-knobs": "^5.3.19",
+    "@storybook/addon-storysource": "^5.3.19",
+    "@storybook/react": "^5.3.19",
+    "@testing-library/jest-dom": "^5.5.0",
+    "@testing-library/react": "^10.0.2",
+    "@types/jest": "^24.0.24",
+    "@types/react": "^16.9.12",
+    "@typescript-eslint/eslint-plugin": "^2.33.0",
+    "@typescript-eslint/parser": "^2.33.0",
+    "babel-loader": "^8.1.0",
+    "babel-preset-react-app": "^9.1.2",
+    "eslint": "^7.0.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.3",
+    "eslint-plugin-react": "^7.20.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^24.9.0",
+    "prettier": "^2.0.5",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "rimraf": "^3.0.2",
+    "rollup": "^1.27.4",
+    "rollup-plugin-copy": "^3.3.0",
+    "rollup-plugin-peer-deps-external": "^2.2.0",
+    "rollup-plugin-sass": "^1.2.2",
+    "rollup-plugin-terser": "^5.3.0",
+    "rollup-plugin-typescript2": "^0.27.0",
+    "sass-loader": "^8.0.0",
+    "storybook-addon-jsx": "^7.3.0",
+    "ts-jest": "^24.3.0",
+    "typescript": "^3.7.2"
+  }
+}
