@@ -1,1 +1,1 @@
-export { Controller } from "./Controller";
+export { SlpViewer } from "./SlpViewer";
