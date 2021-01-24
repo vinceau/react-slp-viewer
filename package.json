@@ -41,6 +41,9 @@
     "input",
     "viewer"
   ],
+  "dependencies": {
+    "jquery": "^3.3.1"
+  },
   "peerDependencies": {
     "@emotion/core": "^10.x",
     "react": ">=16.8.0",
@@ -49,6 +52,7 @@
   "devDependencies": {
     "@babel/core": "^7.9.0",
     "@babel/helper-create-regexp-features-plugin": "^7.10.1",
+    "@babel/helper-regex": "^7.10.5",
     "@emotion/core": "^10.0.28",
     "@rollup/plugin-commonjs": "^11.1.0",
     "@rollup/plugin-image": "^2.0.6",
