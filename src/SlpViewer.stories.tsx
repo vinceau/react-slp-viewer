@@ -1,7 +1,7 @@
 import React from "react";
 import { SlpViewer } from "./SlpViewer";
 
-import replay from "./replay.json";
+import replay from "../test/replay.json";
 import { withKnobs } from "@storybook/addon-knobs";
 import { jsxDecorator } from "storybook-addon-jsx";
 
