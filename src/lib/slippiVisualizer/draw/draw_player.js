@@ -29,15 +29,11 @@ export function drawPlayer(g, i, id, animationsMap) {
   }
 
   const charAnimations = animationsMap.get(p.charID);
+  const animation = charAnimations[p.action.name];
 
-  /*if (frame > framesData[characterSelections[i]][p.action.name]) {
-        frame = framesData[characterSelections[i]][p.action.name];
-    }*/
-  if (charAnimations[p.action.name] === undefined) {
+  if (!animation) {
     return;
   }
-
-  const animation = charAnimations[p.action.name].default;
 
   if (frame - 1 > animation.length - 1) {
     frame = animation.length;

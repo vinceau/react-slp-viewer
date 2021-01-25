@@ -50,10 +50,7 @@ export default class Game {
     for (var i = 0; i < this.replay.settings.players.length; i++) {
       var p = this.replay.settings.players[i];
       if (!this.animations.has(p.characterId)) {
-        const charAnimation = (await getAnimation(p.characterId)).default;
-        if (!charAnimation) {
-          throw new Error(`Unsupported character id: ${p.characterId}`);
-        }
+        const charAnimation = await getAnimation(p.characterId);
         this.animations.set(p.characterId, charAnimation);
       }
       this.players[i] = new Player(
