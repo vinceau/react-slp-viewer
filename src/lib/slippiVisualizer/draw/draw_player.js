@@ -37,7 +37,7 @@ export function drawPlayer(g, i, id, animationsMap) {
     return;
   }
 
-  const animation = charAnimations[p.action.name].default;
+  const animation = new Int16Array(charAnimations[p.action.name].default);
 
   if (frame - 1 > animation.length - 1) {
     frame = animation.length;
