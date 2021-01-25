@@ -8,6 +8,12 @@ This repo lays the groundwork for rewriting [slippi-visualiser](https://github.c
 in Typescript and aims to remove the jQuery dependency in favour of more React-like DOM manipulation. I hope this
 becomes clean enough for external contributers to help port the remaining character animations.
 
+## Done
+
+* Basic Typescript support
+* Remove dependencies on global imports
+* Lazy-load character animations on demand
+
 ### To-do
 
 * Convert more things to Typescript
