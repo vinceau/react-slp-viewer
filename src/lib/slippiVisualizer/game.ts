@@ -6,7 +6,7 @@ import { clearScreen } from "./draw/draw";
 import { drawPlayer } from "./draw/draw_player";
 import { drawGameFinishScreen, drawOverlay, drawErrorText } from "./draw/draw_ui";
 import { drawBackground, drawStage } from "./draw/draw_stage";
-import getAnimation from "./animations";
+import { fetchAnimation } from "./animations";
 // import { drawDebug } from "./draw/debug";
 // import { displayDebug } from "./main";
 
@@ -50,7 +50,7 @@ export default class Game {
     for (var i = 0; i < this.replay.settings.players.length; i++) {
       var p = this.replay.settings.players[i];
       if (!this.animations.has(p.characterId)) {
-        const charAnimation = await getAnimation(p.characterId);
+        const charAnimation = await fetchAnimation(p.characterId);
         this.animations.set(p.characterId, charAnimation);
       }
       this.players[i] = new Player(

@@ -1,5 +1,8 @@
 import { externalCharacterIDs } from "../characters";
 
+// Store all the imported animations here
+const animationMap = new Map<number, any>();
+
 const importAnimation = async (charId: number): Promise<any> => {
   switch (externalCharacterIDs[charId]) {
     case "FALCON": {
@@ -18,25 +21,26 @@ const importAnimation = async (charId: number): Promise<any> => {
       return await import("./falco");
     }
     default: {
-      return null;
+      throw new Error(`Unsupported character id: ${charId}`);
     }
   }
 };
 
-const getAnimation = async (charId: number): Promise<any> => {
-  const charAnimation = (await importAnimation(charId)).default;
-  if (!charAnimation) {
-    throw new Error(`Unsupported character id: ${charId}`);
+export const fetchAnimation = async (charId: number): Promise<any> => {
+  // Check if we've imported it before
+  if (animationMap.has(charId)) {
+    return animationMap.get(charId);
   }
+
+  const charAnimation = (await importAnimation(charId)).default;
   const converted: any = {};
   Object.entries(charAnimation).forEach(([key, value]) => {
     converted[key] = (value as any).map((inner) => {
-      console.log("inner");
-      console.log(inner);
       return [new Int16Array(inner[0])];
     });
   });
+
+  // Store it for later
+  animationMap.set(charId, converted);
   return converted;
 };
-
-export default getAnimation;
