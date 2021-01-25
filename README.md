@@ -24,7 +24,7 @@ becomes clean enough for external contributers to help port the remaining charac
 ### Known issues and other considerations
 
 For some reason when building, I get: `FATAL ERROR: Ineffective mark-compacts near heap limit Allocation failed` errors
-and I have no idea why. Increasing the node memory limit does not fix this issue. Starting the storybook server does not seem to be affected. My hunches are it's because the animations are so big (around 30MB altogether with only 5 supported characters), and/or the Typescript source mapping is running out of space because all those animations are on one line.
+and I have no idea why. Increasing the node memory limit does not fix this issue. Starting the storybook server does not seem to be affected. My hunches are it's because the animations are so big (around 30MB altogether with only 5 supported characters), and/or the Typescript source mapping is running out of space.
 
 Since the animations are so big and are not particularly related the SLP playback component directly, it might be worth storing them in a different format and perhaps even in a different project. Having to rebuild the animations all the time gets tedious fast.
 
@@ -44,6 +44,8 @@ both with anims + models being pretty easy to export and view
 or with training modes easy code editing to go through all the action frames for you
 but imo, paths are not even that good. they are pretty expensive. you could load in the models and anims in webgl and it'd run much better
 ```
+
+It's possible that we can simplify the SVG paths by removing as many unnecessary points, making the characters less sharp and pointy, while also improving performance and reducing space.
 
 ## Development
 
