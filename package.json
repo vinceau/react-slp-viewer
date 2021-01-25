@@ -1,9 +1,9 @@
 {
-  "name": "react-gamecube",
-  "description": "Gamecube controller input display",
+  "name": "react-slp-viewer",
+  "description": "React component for viewing SLP files in browser",
   "license": "MIT",
   "version": "0.0.0",
-  "repository": "vinceau/react-gamecube",
+  "repository": "vinceau/react-slp-viewer",
   "author": {
     "name": "Vince Au",
     "email": "vinceau09@gmail.com",
@@ -36,9 +36,9 @@
   },
   "keywords": [
     "react",
-    "gamecube",
-    "controller",
-    "input",
+    "slp",
+    "slippi",
+    "visualizer",
     "viewer"
   ],
   "dependencies": {
