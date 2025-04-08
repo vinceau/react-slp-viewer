@@ -1,3 +1,6 @@
+> [!IMPORTANT]  
+> This repo is archived and no longer maintained. Use [SlippiLab](https://github.com/frankborden/slippilab) instead.
+
 # `react-slp-viewer`
 
 > React component for viewing SLP files in browser
